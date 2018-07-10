@@ -6,15 +6,15 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
 
-@Configuration
+@Configuration("myJdbcConfig")
 @ImportResource("classpath:config.xml")
 public class myJdbcConfig {
     @Value("${url}")
-    private String url;
+    public String url;
     @Value("${password}")
-    private String password;
+    public String password;
     @Value("${jdbc.userName}")
-    private String userName;
+    public String userName;
     @Bean("jdbcDriverManager")
     public JdbcDriverManager getDriverManager()
     {

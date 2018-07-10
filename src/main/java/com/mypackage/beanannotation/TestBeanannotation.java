@@ -2,6 +2,7 @@ package com.mypackage.beanannotation;
 
 import com.mypackage.bean.JdbcDriverManager;
 import com.mypackage.bean.TestInitDestory;
+import com.mypackage.config.myJdbcConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationContext;
@@ -28,6 +29,8 @@ public class TestBeanannotation {
     private  TestInitDestory show;
     @Autowired
     private JdbcDriverManager jdbcDriverManager;
+    @Autowired
+    private myJdbcConfig myJdbcConfig;
     public void show()
     {
         if(iBeanInterfaceList !=null && iBeanInterfaceList.size() >0)
@@ -67,6 +70,6 @@ public class TestBeanannotation {
         testInitDestory.show();
         show.show();
         jdbcDriverManager.show();
-//        TestInitDestory testInitDestory =(TestInitDestory)applicationContext.getBean("myAppConfig.show");
+        System.out.println(myJdbcConfig.password);
     }
 }
