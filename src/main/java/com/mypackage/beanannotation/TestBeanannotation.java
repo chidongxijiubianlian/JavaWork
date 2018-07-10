@@ -1,5 +1,6 @@
 package com.mypackage.beanannotation;
 
+import com.mypackage.bean.JdbcDriverManager;
 import com.mypackage.bean.TestInitDestory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -23,6 +24,10 @@ public class TestBeanannotation {
     private IBeanInterface iBeanInterface;
     @Autowired
     private ApplicationContext applicationContext;
+    @Autowired
+    private  TestInitDestory show;
+    @Autowired
+    private JdbcDriverManager jdbcDriverManager;
     public void show()
     {
         if(iBeanInterfaceList !=null && iBeanInterfaceList.size() >0)
@@ -58,7 +63,10 @@ public class TestBeanannotation {
             System.out.println(iBeanInterface.getClass().getName());
             iBeanInterface.show();
         }
-        TestInitDestory testInitDestory =(TestInitDestory)applicationContext.getBean("myAppConfig.show");
+        TestInitDestory testInitDestory =(TestInitDestory)applicationContext.getBean("show");
         testInitDestory.show();
+        show.show();
+        jdbcDriverManager.show();
+//        TestInitDestory testInitDestory =(TestInitDestory)applicationContext.getBean("myAppConfig.show");
     }
 }
