@@ -4,6 +4,8 @@ import com.mypackage.bean.JdbcDriverManager;
 import com.mypackage.bean.TestInitDestory;
 import com.mypackage.config.myJdbcConfig;
 import com.mypackage.config.myStoreConfig;
+import com.mypackage.service.JsrService;
+import com.mypackage.SummerApplicationContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationContext;
@@ -38,6 +40,8 @@ public class TestBeanannotation {
     private IStore<String> iStoreA;
     @Autowired
     private IStore<Integer> iStoreB;
+    @Autowired
+    private JsrService jsrService;
     public void show()
     {
 //        if(iBeanInterfaceList !=null && iBeanInterfaceList.size() >0)
@@ -81,5 +85,11 @@ public class TestBeanannotation {
         System.out.println("proAddr:"+myStoreConfig.proAddr+"proName:"+myStoreConfig.proName+"proCount"+myStoreConfig.proCount);
         iStoreA.show();
         iStoreB.show();
+        jsrService.save();
+        jsrService.start();
+        jsrService.end();
+        SummerApplicationContext context = new SummerApplicationContext();
+        context.SummerStart();
+        JdbcDriverManager jdbcDriverManager =(JdbcDriverManager)context.GetTaste("jdbcDriverManager");
     }
 }
