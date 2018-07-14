@@ -4,11 +4,13 @@ import com.mypackage.bean.JdbcDriverManager;
 import com.mypackage.bean.TestInitDestory;
 import com.mypackage.config.myJdbcConfig;
 import com.mypackage.config.myStoreConfig;
+import com.mypackage.service.JsrService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -38,6 +40,8 @@ public class TestBeanannotation {
     private IStore<String> iStoreA;
     @Autowired
     private IStore<Integer> iStoreB;
+    @Resource
+    private JsrService jsrService;
     public void show()
     {
 //        if(iBeanInterfaceList !=null && iBeanInterfaceList.size() >0)
@@ -81,5 +85,6 @@ public class TestBeanannotation {
         System.out.println("proAddr:"+myStoreConfig.proAddr+"proName:"+myStoreConfig.proName+"proCount"+myStoreConfig.proCount);
         iStoreA.show();
         iStoreB.show();
+        jsrService.save();
     }
 }
