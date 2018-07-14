@@ -5,8 +5,6 @@ import com.mypackage.bean.TestInitDestory;
 import com.mypackage.config.myJdbcConfig;
 import com.mypackage.config.myStoreConfig;
 import com.mypackage.service.JsrService;
-import com.mypackage.service.JsrService;
-import com.mypackage.SummerApplicationContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationContext;
@@ -88,10 +86,5 @@ public class TestBeanannotation {
         iStoreA.show();
         iStoreB.show();
         jsrService.save();
-        jsrService.start();
-        jsrService.end();
-        SummerApplicationContext context = new SummerApplicationContext();
-        context.SummerStart();
-        JdbcDriverManager jdbcDriverManager =(JdbcDriverManager)context.GetTaste("jdbcDriverManager");
     }
 }
