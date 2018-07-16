@@ -80,8 +80,8 @@ public class TestBeanannotation {
 //        jdbcDriverManager.show();
 //        System.out.println(myJdbcConfig.password);
         System.out.println("proAddr:"+myStoreConfig.proAddr+"proName:"+myStoreConfig.proName+"proCount"+myStoreConfig.proCount);
-        iStoreA.show();
         iStoreB.show();
+        iStoreA.show();
         SummerApplicationContext context = new SummerApplicationContext();
         context.SummerStart();
         JdbcDriverManager jdbcDriverManager =(JdbcDriverManager)context.GetTaste("jdbcDriverManager");

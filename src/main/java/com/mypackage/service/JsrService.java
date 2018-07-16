@@ -10,7 +10,7 @@ import javax.annotation.Resource;
 
 @Service
 public class JsrService {
-    @Autowired
+    @Resource
     private JsrDao jsrDao;
     public void save()
     {

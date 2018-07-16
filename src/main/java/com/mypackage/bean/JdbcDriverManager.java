@@ -1,4 +1,10 @@
 package com.mypackage.bean;
+
+import com.mypackage.annotation.YzInspect;
+import org.springframework.stereotype.Component;
+
+@YzInspect
+@Component
 public class JdbcDriverManager {
     public JdbcDriverManager()
     {
