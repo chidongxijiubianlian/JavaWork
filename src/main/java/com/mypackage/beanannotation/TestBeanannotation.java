@@ -91,5 +91,6 @@ public class TestBeanannotation {
         SummerApplicationContext context = new SummerApplicationContext();
         context.SummerStart();
         JdbcDriverManager jdbcDriverManager =(JdbcDriverManager)context.GetTaste("jdbcDriverManager");
+        jdbcDriverManager.show();
     }
 }
