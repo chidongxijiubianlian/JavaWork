@@ -6,6 +6,10 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
 @YzInspect
 public class JdbcDriverManager {
+    public JdbcDriverManager()
+    {
+
+    }
     public JdbcDriverManager(String password,String url,String userName)
     {
         System.out.println("password:"+password);
